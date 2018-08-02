@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://123FakeToken:@harvest.greenhouse.io/v1/candidates/1
+    body:
+      encoding: UTF-8
+      string: '{"tags":["TAG"]}'
+    headers:
+      On-Behalf-Of:
+      - '2'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 Aug 2018 04:19:32 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '7163'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"first_name":"Candidate","last_name":"Person","company":"Company","title":"Baron","created_at":"2017-11-24T00:28:28.090Z","updated_at":"2018-08-02T04:19:32.702Z","last_activity":"2018-08-02T04:19:32.680Z","is_private":false,"photo_url":null,"attachments":[{"filename":"Candidate_Person_-_Offer_Packet_2018-08-01_(Private).pdf","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/105/239/010/original/Candidate_Person_-_Offer_Packet_2018-08-01_%28Private%29.pdf?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_packet"},{"filename":"Offer_Document_Candidate_Person.pdf","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/921/898/900/original/Offer_Document_Candidate_Person.pdf?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123D","type":"signed_offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/921/897/40/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123gE%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/921/799/900/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/115/43/40/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/510/995/800/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/510/995/800/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/115/43/40/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/510/995/800/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"},{"filename":"Offer_Document_Candidate_Person.docx","url":"https://grnhse-ghr-prod-s2.s3.amazonaws.com/person_attachments/data/115/43/40/original/Offer_Document_Candidate_Person.docx?AWSAccessKeyId=AWS123\u0026Expires=1232\u0026Signature=SIG123%3D","type":"offer_letter"}],"application_ids":[97,51,56,54,53],"phone_numbers":[{"value":"0412
+        345 678 ","type":"mobile"}],"addresses":[],"email_addresses":[{"value":"candidate.person@gmail.com","type":"personal"}],"website_addresses":[],"social_media_addresses":[],"recruiter":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"coordinator":null,"tags":["TAG"],"applications":[{"id":97,"candidate_id":1,"prospect":false,"applied_at":"2018-07-31T03:26:20.057Z","rejected_at":null,"last_activity_at":"2018-08-02T04:19:32.680Z","location":null,"source":null,"credited_to":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"rejection_reason":null,"rejection_details":null,"jobs":[{"id":404,"name":"Job"}],"status":"active","current_stage":{"id":429,"name":"Stage
+        1"},"answers":[],"prospect_detail":{"prospect_pool":null,"prospect_stage":null,"prospect_owner":null}},{"id":51,"candidate_id":1,"prospect":true,"applied_at":"2017-12-15T05:44:27.471Z","rejected_at":null,"last_activity_at":"2018-08-02T04:19:32.680Z","location":null,"source":null,"credited_to":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"rejection_reason":null,"rejection_details":null,"jobs":[{"id":400,"name":"Role
+        (Nov 2017)"}],"status":"converted","current_stage":null,"answers":[],"prospect_detail":{"prospect_pool":null,"prospect_stage":null,"prospect_owner":null}},{"id":56,"candidate_id":1,"prospect":false,"applied_at":"2018-02-19T23:36:56.784Z","rejected_at":null,"last_activity_at":"2018-08-02T04:19:32.680Z","location":null,"source":null,"credited_to":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"rejection_reason":null,"rejection_details":null,"jobs":[{"id":556,"name":"Job
+        Test"}],"status":"active","current_stage":{"id":41,"name":"Stage
+        1"},"answers":[],"prospect_detail":{"prospect_pool":null,"prospect_stage":null,"prospect_owner":null}},{"id":54,"candidate_id":1,"prospect":true,"applied_at":"2018-01-23T21:30:49.961Z","rejected_at":null,"last_activity_at":"2018-08-02T04:19:32.680Z","location":null,"source":null,"credited_to":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"rejection_reason":null,"rejection_details":null,"jobs":[],"status":"converted","current_stage":null,"answers":[],"prospect_detail":{"prospect_pool":null,"prospect_stage":null,"prospect_owner":null}},{"id":53,"candidate_id":1,"prospect":true,"applied_at":"2018-01-17T03:31:49.168Z","rejected_at":null,"last_activity_at":"2018-08-02T04:19:32.680Z","location":null,"source":null,"credited_to":{"id":2,"first_name":"Recruiter","last_name":"Person","name":"Recruiter
+        Person","employee_id":null},"rejection_reason":null,"rejection_details":null,"jobs":[],"status":"converted","current_stage":null,"answers":[],"prospect_detail":{"prospect_pool":null,"prospect_stage":null,"prospect_owner":null}}],"educations":[],"employments":[],"custom_fields":{"availability":null,"current_salary":null,"desired_salary":null,"job_category":null},"keyed_custom_fields":{"availability":null,"current_salary":null,"desired_salary":null,"job_category":null}}'
+    http_version:
+  recorded_at: Thu, 02 Aug 2018 04:19:33 GMT
+recorded_with: VCR 3.0.3

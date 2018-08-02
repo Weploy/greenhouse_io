@@ -28,6 +28,14 @@ module GreenhouseIo
       get_from_harvest_api "/candidates#{path_id(id)}", options
     end
 
+    def edit_candidate(candidate_id, candidate_hash, on_behalf_of)
+      patch_to_harvest_api(
+        "/candidates/#{candidate_id}",
+        candidate_hash,
+        { 'On-Behalf-Of' => on_behalf_of.to_s }
+      )
+    end
+
     def activity_feed(id, options = {})
       get_from_harvest_api "/candidates/#{id}/activity_feed", options
     end
@@ -123,6 +131,22 @@ module GreenhouseIo
       else
         raise GreenhouseIo::Error.new(response.code)
       end
+    end
+
+    def patch_to_harvest_api(url, body, headers)
+      response = patch_response(url, {
+        :body => JSON.dump(body),
+        :basic_auth => basic_auth,
+        :headers => headers
+        })
+
+        set_headers_info(response.headers)
+
+        if response.code == 200
+          parse_json(response)
+        else
+          raise GreenhouseIo::Error.new(response.code)
+        end
     end
 
     def set_headers_info(headers)

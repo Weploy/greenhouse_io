@@ -206,6 +206,54 @@ describe GreenhouseIo::Client do
       end
     end
 
+    describe "#edit_candidate" do
+      let(:candidate_id) { 1 }
+      let(:invalid_candidate_id) { 99 }
+      let(:on_behalf_of) { 2 }
+      let(:invalid_on_behalf_of) { 99 }
+      let(:tag) { "TAG" }
+      let(:edit_hash) do
+        {
+          tags: [tag]
+        }
+      end
+      it "patches a specified candidate" do
+        VCR.use_cassette('client/edit_candidate') do
+          edit_candidate = @client.edit_candidate(
+            candidate_id,
+            edit_hash,
+            on_behalf_of
+          )
+          expect(edit_candidate).to_not be_nil
+          expect(edit_candidate).to include edit_hash
+        end
+      end
+
+      it "errors when given invalid On-Behalf-Of id" do
+        VCR.use_cassette('client/edit_candidate_invalid_on_behalf_of') do
+          expect {
+            @client.edit_candidate(
+              candidate_id,
+              edit_hash,
+              invalid_on_behalf_of
+            )
+          }.to raise_error(GreenhouseIo::Error)
+        end
+      end
+
+      it "errors when given an invalid candidate id" do
+        VCR.use_cassette('client/edit_candidate_invalid_candidate_id') do
+          expect {
+            @client.edit_candidate(
+              invalid_candidate_id,
+              edit_hash,
+              on_behalf_of
+            )
+          }.to raise_error(GreenhouseIo::Error)
+        end
+      end
+    end
+
     describe "#activity_feed" do
       before do
         VCR.use_cassette('client/activity_feed') do
