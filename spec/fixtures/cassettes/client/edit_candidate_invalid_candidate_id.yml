@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://123FakeToken:@harvest.greenhouse.io/v1/candidates/99
+    body:
+      encoding: UTF-8
+      string: '{"tags":["TAG"]}'
+    headers:
+      On-Behalf-Of:
+      - '2'
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 02 Aug 2018 04:19:35 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '32'
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '497'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"message":"Resource not found"}'
+    http_version:
+  recorded_at: Thu, 02 Aug 2018 04:19:35 GMT
+recorded_with: VCR 3.0.3
