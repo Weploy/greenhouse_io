@@ -36,6 +36,14 @@ module GreenhouseIo
       )
     end
 
+    def add_attachment_to_candidate(candidate_id, attachment_hash, on_behalf_of)
+      post_to_harvest_api(
+        "/candidates/#{candidate_id}/attachments",
+        attachment_hash,
+        { 'On-Behalf-Of' => on_behalf_of.to_s }
+      )
+    end
+
     def activity_feed(id, options = {})
       get_from_harvest_api "/candidates/#{id}/activity_feed", options
     end
@@ -104,7 +112,7 @@ module GreenhouseIo
 
     def get_from_harvest_api(url, options = {})
       response = get_response(url, {
-        :query => permitted_options(options), 
+        :query => permitted_options(options),
         :basic_auth => basic_auth
       })
 
