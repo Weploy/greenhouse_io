@@ -121,7 +121,7 @@ module GreenhouseIo
       if response.code == 200
         parse_json(response)
       else
-        raise GreenhouseIo::Error.new(response.code)
+        raise GreenhouseIo::Error.new("#{response.message}: #{response.parsed_response['message']}", response.code)
       end
     end
 
@@ -137,7 +137,7 @@ module GreenhouseIo
       if response.code == 200
         parse_json(response)
       else
-        raise GreenhouseIo::Error.new(response.code)
+        raise GreenhouseIo::Error.new("#{response.message}: #{response.parsed_response['message']}", response.code)
       end
     end
 
@@ -153,7 +153,7 @@ module GreenhouseIo
         if response.code == 200
           parse_json(response)
         else
-          raise GreenhouseIo::Error.new(response.code)
+          raise GreenhouseIo::Error.new("#{response.message}: #{response.parsed_response['message']}", response.code)
         end
     end
 
