@@ -28,7 +28,7 @@ module GreenhouseIo
       get_from_harvest_api "/candidates#{path_id(id)}", options
     end
 
-    def edit_candidate(candidate_id, candidate_hash, on_behalf_of)
+    def edit_candidate(candidate_id, candidate_hash, on_behalf_of = GreenhouseIo.configuration.on_behalf_of)
       patch_to_harvest_api(
         "/candidates/#{candidate_id}",
         candidate_hash,
@@ -36,7 +36,7 @@ module GreenhouseIo
       )
     end
 
-    def add_attachment_to_candidate(candidate_id, attachment_hash, on_behalf_of)
+    def add_attachment_to_candidate(candidate_id, attachment_hash, on_behalf_of = GreenhouseIo.configuration.on_behalf_of)
       post_to_harvest_api(
         "/candidates/#{candidate_id}/attachments",
         attachment_hash,
@@ -48,7 +48,7 @@ module GreenhouseIo
       get_from_harvest_api "/candidates/#{id}/activity_feed", options
     end
 
-    def create_candidate_note(candidate_id, note_hash, on_behalf_of)
+    def create_candidate_note(candidate_id, note_hash, on_behalf_of = GreenhouseIo.configuration.on_behalf_of)
       post_to_harvest_api(
         "/candidates/#{candidate_id}/activity_feed/notes",
         note_hash,

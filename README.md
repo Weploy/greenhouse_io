@@ -34,6 +34,7 @@ GreenhouseIo.configure do |config|
 	config.symbolize_keys = true # set response keys as strings or symbols, default is false
 	config.organization = 'General Assembly'
 	config.api_token = ENV['GREENHOUSE_API_TOKEN']
+	config.on_behalf_of = ENV['GREENHOUSE_ACCOUNT_ID']
 end
 ```
 
