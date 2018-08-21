@@ -68,4 +68,26 @@ describe GreenhouseIo::Configuration do
       expect(GreenhouseIo.configuration.api_token).to eq('123FakeToken')
     end
   end
+
+  context "when no on_behalf_of id is specified" do
+    before do
+      restore_default_config
+    end
+
+    it "returns nil" do
+      expect(GreenhouseIo.configuration.on_behalf_of).to be_nil
+    end
+  end
+
+  context "when on_behalf_of id is specified" do
+    before do
+      GreenhouseIo.configure do |config|
+        config.on_behalf_of = '123FakePersonToken'
+      end
+    end
+
+    it "returns the id value" do
+      expect(GreenhouseIo.configuration.on_behalf_of).to eq('123FakePersonToken')
+    end
+  end
 end
