@@ -129,7 +129,7 @@ module GreenhouseIo
       response = post_response(url, {
         :body => JSON.dump(body),
         :basic_auth => basic_auth,
-        :headers => headers
+        :headers => headers.merge('content-type' => 'application/json;charset=utf-8')
       })
 
       set_headers_info(response.headers)
@@ -145,7 +145,7 @@ module GreenhouseIo
       response = patch_response(url, {
         :body => JSON.dump(body),
         :basic_auth => basic_auth,
-        :headers => headers
+        :headers => headers.merge('content-type' => 'application/json;charset=utf-8')
         })
 
         set_headers_info(response.headers)
